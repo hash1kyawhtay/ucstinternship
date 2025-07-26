@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Login Form</title>
 </head>
 <body>
     <h1>Admin Login</h1>
