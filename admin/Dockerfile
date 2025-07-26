@@ -5,7 +5,7 @@ FROM php:8.2-apache
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Copy backend code
-COPY . /var/www/html/
+COPY admin/ /var/www/html/
 
 # Set proper permissions (optional)
 RUN chown -R www-data:www-data /var/www/html
