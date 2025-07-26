@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-$host = "localhost";
+$host = "mysql-service"; // Use the service name defined in Kubernetes
 $dbname = "intern";
 $username = "root";     // change to your DB user
 $password = "root";         // change to your DB pass
