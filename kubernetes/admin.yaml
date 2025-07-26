@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ucstinternship
+  name: ucstinternshipadmin
   namespace: ucstinternship
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ucstinternship
+      app: ucstinternshipadmin
   template:
     metadata:
       labels:
-        app: ucstinternship
+        app: ucstinternshipadmin
     spec:
       containers:
-      - name: ucstinternship
-        image: hashonekyaw/ucstinternship:latest
+      - name: ucstinternshipadmin
+        image: hashonekyaw/ucstinternshipadmin:latest
         ports:
         - containerPort: 80
 
@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ucstinternship-service
+  name: ucstinternshipadmin-service
   namespace: ucstinternship
 spec:
   selector:
-    app: ucstinternship
+    app: ucstinternshipadmin
   ports:
   - port: 80
     targetPort: 80

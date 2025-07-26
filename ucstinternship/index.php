@@ -46,7 +46,7 @@
             const container = document.getElementById('company-list');
             container.textContent = 'Loading companies...';
             try {
-                const res = await fetch('/backend.php?action=getCompanies');
+                const res = await fetch('http://ucst.internship.admin/backend.php?action=getCompanies');
                 const companies = await res.json();
 
                 if (companies.error) {

@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'ucstinternship/**'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/ciu.yml'
 
 jobs:
   build-backend:
