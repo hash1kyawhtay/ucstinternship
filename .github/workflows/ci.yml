@@ -1,0 +1,29 @@
+name: CI for Intern Project
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'ucstinternship/**'
+      - '.github/workflows/ci.yml'
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Docker Login
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build & Push Backend Image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./ucstinternship
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/ucstinternship:latest
