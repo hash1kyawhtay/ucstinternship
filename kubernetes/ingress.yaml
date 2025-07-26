@@ -18,4 +18,14 @@ spec:
             name: ucstinternship-service
             port:
               number: 80
+  - host: ucst.internship.admin
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ucstinternshipadmin-service
+            port:
+              number: 80
   
